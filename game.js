@@ -19,6 +19,7 @@ const render = Render.create({
 
 // Create two boxes and a ground
 const boxA = Bodies.rectangle(screenWidth / 2, screenHeight / 100, 80, 80, {
+    
     render: {
         sprite: {
             texture: 'hugo.png',
@@ -28,7 +29,7 @@ const boxA = Bodies.rectangle(screenWidth / 2, screenHeight / 100, 80, 80, {
     }
 });
 
-const boxB = Bodies.rectangle(screenWidth / 2.5, screenHeight / 100, 160, 160, {
+const boxB = Bodies.rectangle(screenWidth / 2.5, screenHeight / 100, 125, 125, {
     render: {
         sprite: {
             texture: 'hugo.png',
@@ -38,11 +39,13 @@ const boxB = Bodies.rectangle(screenWidth / 2.5, screenHeight / 100, 160, 160, {
     }
 });
 
-const ground = Bodies.rectangle(screenWidth / 2.01, screenHeight / 2.04, screenWidth / 2.7, 290, { isStatic: true});
+
+
+
 const ground2 = Bodies.rectangle(screenWidth / 2, screenHeight, screenWidth, 10, { isStatic: true});
 
 // Add all of the bodies to the world
-Composite.add(engine.world, [boxA, boxB, ground, ground2]);
+Composite.add(engine.world, [boxA, boxB,  ground2]);
 
 document.addEventListener("keydown", (event) => {
     let keyCode = event.keyCode;
@@ -76,14 +79,17 @@ document.body.addEventListener("mousedown", (event) => {
         2: 'david.png',
         3: 'flo.png',
         4: 'gui.png',
-        5: 'jean.png',
+        5: 'hugo.png',
         6: 'phil.png'
     };
 
     const selectedTexture = textures[diceRoll];
 
     // Create a new body with the selected texture
-    const newBody = Bodies.rectangle(x, y, 120, 120, {
+    const newBody = Bodies.rectangle(x, y, 110, 110,  {
+        chamfer: {
+            radius: [20]
+        },
         render: {
             sprite: {
                 texture: selectedTexture,

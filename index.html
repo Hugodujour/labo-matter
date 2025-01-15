@@ -29,12 +29,33 @@
             text-align: center;
             pointer-events: none; /* Empêche toute interaction avec le texte */
         }
+        .hand {
+            position: absolute;
+            top: 49%;
+            left: 60%;
+            height: 20em;
+        }
 
         
     </style>
 </head>
 <body>
     <div id="centered-text">Découvrez l'équipe <br>du labo !</div>
+    <img class="hand" src="hand.gif" id="yeh"/>
+    <script>
+        const centeredText = document.getElementById('centered-text');
+        const yeh = document.getElementById('yeh');
+
+// Ajoute un écouteur d'événement pour les clics sur le document
+document.addEventListener('click', () => {
+    if (centeredText) {
+        centeredText.style.display = 'none'; // Cache l'élément
+    }
+    if (yeh) {
+        yeh.style.display = 'none'; // Cache l'élément
+    }
+});
+    </script>
 <script src="matter.js"></script>    
     <script src="game.js">
     </script>
