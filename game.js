@@ -86,15 +86,15 @@ document.body.addEventListener("mousedown", (event) => {
     const selectedTexture = textures[diceRoll];
 
     // Create a new body with the selected texture
-    const newBody = Bodies.rectangle(x, y, 110, 110,  {
+    const newBody = Bodies.rectangle(x, y, 150, 150,  {
         chamfer: {
             radius: [20]
         },
         render: {
             sprite: {
                 texture: selectedTexture,
-                xScale: 1.5,
-                yScale: 1.5
+                xScale: 2,
+                yScale: 2
             }
         }
     });
