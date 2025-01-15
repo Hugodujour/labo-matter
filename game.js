@@ -28,12 +28,12 @@ const boxA = Bodies.rectangle(400, 200, 80, 80, {
     }
 });
 
-const boxB = Bodies.rectangle(300, 200, 120, 120, {
+const boxB = Bodies.rectangle(300, 200, 160, 160, {
     render: {
         sprite: {
             texture: 'hugo.png',
-            xScale: 1.5,
-            yScale: 1.5
+            xScale: 2,
+            yScale: 2
         }
     }
 });
