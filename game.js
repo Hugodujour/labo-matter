@@ -18,7 +18,7 @@ const render = Render.create({
 });
 
 // Create two boxes and a ground
-const boxA = Bodies.rectangle(400, 200, 80, 80, {
+const boxA = Bodies.rectangle(screenWidth / 2, screenHeight / 100, 80, 80, {
     render: {
         sprite: {
             texture: 'hugo.png',
@@ -28,7 +28,7 @@ const boxA = Bodies.rectangle(400, 200, 80, 80, {
     }
 });
 
-const boxB = Bodies.rectangle(300, 200, 160, 160, {
+const boxB = Bodies.rectangle(screenWidth / 2.5, screenHeight / 100, 160, 160, {
     render: {
         sprite: {
             texture: 'hugo.png',
@@ -38,10 +38,11 @@ const boxB = Bodies.rectangle(300, 200, 160, 160, {
     }
 });
 
-const ground = Bodies.rectangle(screenWidth / 2, screenHeight - 30, screenWidth, 60, { isStatic: true });
+const ground = Bodies.rectangle(screenWidth / 2.01, screenHeight / 2.04, screenWidth / 2.7, 290, { isStatic: true});
+const ground2 = Bodies.rectangle(screenWidth / 2, screenHeight, screenWidth, 10, { isStatic: true});
 
 // Add all of the bodies to the world
-Composite.add(engine.world, [boxA, boxB, ground]);
+Composite.add(engine.world, [boxA, boxB, ground, ground2]);
 
 document.addEventListener("keydown", (event) => {
     let keyCode = event.keyCode;
