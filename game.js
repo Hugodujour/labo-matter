@@ -13,7 +13,7 @@ const render = Render.create({
         width: screenWidth,
         height: screenHeight,
         wireframes: false,
-        background: '#f0f0f0' // Optional: Set a background color
+        background: 'labo.png', // Optional: Set a background color
     }
 });
 
@@ -45,7 +45,7 @@ Composite.add(engine.world, [boxA, boxB, ground]);
 
 document.addEventListener("keydown", (event) => {
     let keyCode = event.keyCode;
-    let speed = 5; // set the speed of movement
+    let speed = 40; // set the speed of movement
 
     // Move the body based on the key pressed
     if (keyCode === 37) {
@@ -82,12 +82,12 @@ document.body.addEventListener("mousedown", (event) => {
     const selectedTexture = textures[diceRoll];
 
     // Create a new body with the selected texture
-    const newBody = Bodies.rectangle(x, y, 160, 160, {
+    const newBody = Bodies.rectangle(x, y, 70, 70, {
         render: {
             sprite: {
                 texture: selectedTexture,
-                xScale: 2,
-                yScale: 2
+                xScale: 1,
+                yScale: 1
             }
         }
     });
